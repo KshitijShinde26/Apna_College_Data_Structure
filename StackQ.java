@@ -1,46 +1,55 @@
+import java.util.Queue;
+
 public class StackQ {
     static class Stack {
-        private int maxSize;
-        private int[] stackArray;
-        private int top;
-
-        public Stack(int size) {
-            this.maxSize = size;
-            this.stackArray = new int[maxSize];
-            this.top = -1;
+        static Queue<Integer> q1 = new java.util.LinkedList<>();
+        static Queue<Integer> q2 = new java.util.LinkedList<>();
+        static int size;
+        Stack(int n) {
+            size = n;
         }
-
-        public void push(int value) {
-            if (top == maxSize - 1) {
+        public  boolean isEmpty() {
+            return q1.isEmpty();
+        }
+        public void push(int data) {
+            if (q1.size() == size) {
                 System.out.println("Stack is full");
                 return;
             }
-            stackArray[++top] = value;
+            q1.add(data);
         }
-
         public int pop() {
             if (isEmpty()) {
                 System.out.println("Stack is empty");
                 return -1;
             }
-            return stackArray[top--];
+            while (q1.size() > 1) {
+                q2.add(q1.remove());
+            }
+            int popped = q1.remove();
+            Queue<Integer> temp = q1;
+            q1 = q2;
+            q2 = temp;
+            return popped;
         }
-
-        public int peek() {
+        public  int peek() {
             if (isEmpty()) {
                 System.out.println("Stack is empty");
                 return -1;
             }
-            return stackArray[top];
+            while (q1.size() > 1) {
+                q2.add(q1.remove());
+            }
+            int top = q1.remove();
+            q2.add(top);
+            Queue<Integer> temp = q1;
+            q1 = q2;
+            q2 = temp;
+            return top;
         }
-
-        public boolean isEmpty() {
-            return (top == -1);
-        }
-
-        public void print() {
-            for (int i = 0; i <= top; i++) {
-                System.out.print(stackArray[i] + " ");
+        public  void print() {
+            for (int item : q1) {
+                System.out.print(item + " ");
             }
             System.out.println();
         }   
