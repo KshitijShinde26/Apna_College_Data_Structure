@@ -6,7 +6,7 @@ public class QueueS {
         public static boolean isEmpty(){
             return s1.isEmpty();
         }
-        public static void add(int data){
+        public  void add(int data){
             while(!s1.isEmpty()){
                 s2.push(s1.pop());
             }
@@ -15,21 +15,21 @@ public class QueueS {
                 s1.push(s2.pop());
             }
         }
-        public static int remove(){
+        public  int remove(){
             if(isEmpty()){
                 System.out.println("Queue is empty");
                 return -1;
             }
             return s1.pop();
         }
-        public static int peek(){
+        public int peek(){
             if(isEmpty()){
                 System.out.println("Queue is empty");
                 return -1;
             }
             return s1.peek();
         }
-        public static void print(){
+        public  void print(){
             System.out.println(s1);
         }
     }
