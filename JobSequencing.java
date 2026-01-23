@@ -16,7 +16,7 @@ public class JobSequencing {
         for(int i =0;i<jobsinfo.length;i++){
             k.add(new Job(i,jobsinfo[i][0],jobsinfo[i][1]));
         }
-        Collections.sort(k,(a,b)-> a.profit-b.profit);
+        Collections.sort(k,(a,b)-> b.profit-a.profit);
         ArrayList<Integer> seq = new ArrayList<>();
         int time =0;
         for(int i =0;i<k.size();i++){
