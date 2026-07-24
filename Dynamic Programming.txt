@@ -1,0 +1,161 @@
+****************Dynamic Programming*******************
+DP is optimized recursion.
+
+It is all about pattern.
+
+How to identify DP?: 1. Optimal problem(max ,min ,most ,least ,largest ,smallest).
+				      2. some choice is given(multiple branches in recursion tree).
+
+Definition : It is a computer programming that helps to efficiently solve a class of problems that have overlapping subproblems and optimal substructure property. 
+
+Ways Of DP : 
+1] Memoization (Top Down)
+Ex. : Fibonacci
+Steps : 
+1. Recursion 
+2.Subproblem ->  Store it -> reuse
+
+2]Tabulation (Bottom up)
+-problem statement is solved using iterative means using loops.
+-it is efficient.
+-in it table , set or storage is used.
+- steps:
+1. initialization
+2. Meaning
+3.start filling(from small to large)
+
+7 important concepts:
+1. Fibonacci : 
+- Climbing Stairs
+- Number Factors
+- Min Jumps to reach the end
+-Min jumps with cost
+-House thief
+
+2. 0-1 Knapsack :
+- Subset sum
+- equal subset sum partition
+- min subset sum difference
+-count of subset sum
+- target sum
+
+3. Unbounded Knapsack : 
+- rod cutting
+- coin change
+- min coin change
+- max ribbon cut
+
+4. LCS (Longest Commo Subsequence) : 
+- longest common substring
+- edit distance
+- box stacking
+- longest increasing subsequence
+- longest bitonic subsequence
+- subsequence pattern matching
+- min add or delete to convert one string to another
+
+5. Kadane's Algorithm (Arrays)
+
+6. Catalan Number : 
+- no. of BSTs
+- N parentheses
+- convex polygons
+- disjoint chords
+- Catalan triangle
+- mountain ranges
+- dyck words
+
+7. DP on Grid(2D arrays)
+
+- using this 7 approaches u can solve 70 questions
+
+✅ Types of Knapsack Problems (DP)
+1) 0/1 Knapsack
+
+Each item can be taken only once
+
+Choice: take or not take
+📌 Example: weight/value items
+
+✅ DP formula:
+
+dp[i][w] = max(notTake, take)
+
+2) Unbounded Knapsack
+
+Each item can be taken unlimited times
+📌 Example: cut rod, unlimited coins, etc.
+
+✅ DP formula:
+
+dp[i][w] = max(notTake, takeSameItemAgain)
+
+
+
+3) Subset Sum / Target Sum Subset
+
+Given array, can we make sum = target?
+
+This is 0/1 type (each element only once)
+
+✅ DP formula:
+
+dp[i][s] = dp[i-1][s] || dp[i-1][s-arr[i-1]]
+
+4) Coin Change
+
+Two common versions:
+
+A) Minimum coins
+
+Find minimum number of coins to make amount
+(unbounded)
+
+B) Number of ways
+
+Count ways to make amount (unbounded)
+
+✅ You asked coin change (recursion/memo/tabulation) → I’ll do minimum coins version.
+
+5) Rod Cutting
+
+Same as Unbounded Knapsack
+
+Each cut length can be used unlimited times
+
+✅ Max profit
+
+6) Longest Common Subsequence (LCS)
+
+String DP problem
+✅ Recursion / Memoization / Tabulation all possible.
+
+✅ Matrix Chain Multiplication (MCM):
+Basics of Matrices (Math)
+✅ Matrix
+
+A matrix is a 2D array of numbers:
+
+Example 2×3 matrix:
+
+[ 1  2  3 ]
+[ 4  5  6 ]
+
+✅ Matrix multiplication rule
+
+If:
+
+A is (p × q)
+
+B is (q × r)
+
+Then:
+
+A × B is possible ✅
+
+Result matrix size = (p × r)
+
+✅ Cost of multiplication
+
+Multiplying (p×q) and (q×r) takes:
+✅ p * q * r multiplications
